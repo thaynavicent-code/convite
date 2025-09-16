@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite de Aniversário - Klaus</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+   background: url("/mnt/data/ea1cdf96-1c90-4116-8f7e-bb4f20fce424.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+      margin: 0;
+    }
+    .convite {
+      background: rgba(245, 232, 120, 0.9);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      border: 5px solid #ffe600;
+    }
+    h1 {
+      color: #1c4fd1;
+      font-size: 2.2em;
+      margin: 0;
+    }
+    h2 {
+      color: #3026bd;
+      font-size: 1.5em;
+      margin: 10px 0 20px;
+    }
+    p {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+    .detalhes {
+      margin: 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #1c4fd1;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #163ca0;
+    }
+    form {
+      margin-top: 20px;
+      text-align: left;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 8px 0 4px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 2px solid #1c4fd1;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+    .emoji {
+      font-size: 2em;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="convite">
+    <div class="emoji">🟡💙 🥳 🟡💙</div>
+    <h1>Klaus faz 3 anos!</h1>
+    <h2>Venha comemorar com a gente!</h2>
+    
+    <div class="detalhes">
+      <p><b>📅 Data:</b> 20 de Setembro de 2025</p>
+      <p><b>⏰ Horário:</b> 14h00</p>
+      <p><b>📍 Local:</b> Rua Silvério Evilásio de Oliveira, nº 160<br>
+      Condomínio Portal do Saira</p>
+    </div>
+    
+    <p>Um dia espcial, com pessoas especiais</p>
+
+    <!-- Formulário de confirmação -->
+    <form onsubmit="enviarWhatsApp(event)">
+      <label for="nome">Seu Nome:</label>
+      <input type="text" id="nome" required>
+
+      <label for="adultos">Quantos adultos?</label>
+      <input type="number" id="adultos" min="0" value="1" required>
+
+      <label for="criancas">Quantas crianças?</label>
+      <input type="number" id="criancas" min="0" value="0" required>
+
+
+    </form> <center><button type="submit" class="btn">Confirmar Presença ✅</button>
+    </form></center>
+
+    <a href="https://www.google.com/maps?q=Rua+Silvério+Evilásio+de+Oliveira,+160,+Condomínio+Portal+do+Saira" class="btn" target="_blank">
+      Como Chegar 📍
+    </a>
+
+    <div class="emoji">💛 3 aninhos do Klaus 💛 </div>
+  </div>
+
+  <script>
+    function enviarWhatsApp(event) {
+      event.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const adultos = document.getElementById("adultos").value;
+      const criancas = document.getElementById("criancas").value;
+
+      const mensagem = `Olá! Confirmo minha presença na festa do Klaus 🎉\n\n👤 Nome: ${nome}\n👨‍🦱 Adultos: ${adultos}\n👶 Crianças: ${criancas}`;
+      const telefone = "5515996125112"//números, ex: 5511999999999
+      const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
